@@ -1,0 +1,644 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+   text-align: center;
+
+}
+.wrapper{
+   width: 1170px;
+   margin: 0 auto;
+}  
+header{
+   height: 100px;
+   background: cornflowerblue;
+   width: 100%;
+   z-index: 12;
+   position: fixed;
+
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+   width: 10px;
+ }
+ ::-webkit-scrollbar-track {
+   background: #f1f1f1;
+ }
+ ::-webkit-scrollbar-thumb {
+   background: #888;
+ }
+ 
+ ::-webkit-scrollbar-thumb:hover {
+   background: #555;
+ }
+
+.logo{
+   width: 20%;
+   float: left;
+   line-height: 100px;
+}
+
+.logo a{
+  text-decoration: none;
+  font-size: 30px;
+  font-family: bignoodletitling;
+  color: #fff;
+  letter-spacing: 5px;
+ 
+
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 20px 20px ;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease;
+  background-color:rgb(49, 63, 63);
+  height: 70px;
+}
+.navbar.sticky{
+  padding: 15px 0;
+  background: rgb(16, 227, 255);
+}
+.navbar .max-width{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.navbar .logo a span{
+  color: rgb(43, 241, 255);
+  transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+  color: #fff;
+}
+.navbar .menu li{
+  list-style: none;
+  display: inline-block;
+  padding: 10px 10px;
+}
+.navbar .menu li a{
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+  color: rgb(255, 4, 45);
+}
+.navbar.sticky .menu li a:hover{
+  color: rgb(255, 255, 255);
+}
+
+/* menu btn styling */
+.menu-btn{
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.scroll-up-btn{
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: rgb(15, 185, 252);
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-up-btn:hover{
+  filter: brightness(90%);
+}
+/* banner */
+.banner-area{
+  width: 100%;
+  height: 500px;
+  position: fixed;
+  top: 100px;
+  background-image:url(11.jpeg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner-area h5{
+  padding-top: 8%;
+  font-size: 40px;
+  font-family: poppins;
+  text-transform: uppercase;
+  color: #5d9cec;
+  font-style: initial;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+
+}
+/* content */
+
+.content-area{
+    width: 100%;
+    position: relative;
+    top: 450px;
+    background: #ddd;
+    height: 700%;
+ 
+ }
+ 
+ .content-area h2{
+    font-family: bignoodletitling;
+    letter-spacing: 1.2px;
+    padding-top: 30px;
+    font-size: 40;
+    margin: 0;
+  
+ 
+ }
+ 
+ .content-area p{
+     padding: 2% 0;
+     font-family: merienda;
+     line-height: 30px;
+  
+ 
+ }
+
+ 
+
+/* images */
+
+.credit {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #000;
+  }
+  .options {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 600px;
+    max-width: 900px;
+    width: calc(100% - 100px);
+    height: 400px;
+    padding: 1rem 0rem;
+    width: 100%;
+  
+    
+  }
+  .option {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    
+  }
+  .option:nth-child(1) {
+    --defaultBackground: #ed5565;
+  }
+  .option:nth-child(2) {
+    --defaultBackground: #fc6e51;
+  }
+  .option:nth-child(3) {
+    --defaultBackground: #ffce54;
+  }
+  .option:nth-child(4) {
+    --defaultBackground: #2ecc71;
+  }
+  .option:nth-child(5) {
+    --defaultBackground: #5d9cec;
+  }
+
+  .option:nth-child(5) {
+    --defaultBackground: #dd1ce4;
+  }
+  .option.active {
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 600px;
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+  }
+  .option.active .shadow {
+    box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+  }
+  .option.active .label {
+    bottom: 20px;
+    left: 20px;
+  }
+  .option.active .info > div {
+    left: 0px;
+    opacity: 1;
+  }
+  .option:not(.active) {
+    flex-grow: 1;
+    border-radius: 30px;
+  }
+  .option:not(.active) .shadow {
+    bottom: -40px;
+    box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
+  }
+  .option:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+  }
+  .option:not(.active) .info > div {
+    left: 20px;
+    opacity: 0;
+  }
+  .shadow {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 120px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  }
+  .label {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  }
+  .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    color: var(--defaultBackground);
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    white-space: pre;
+  }
+  .info > div {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+  }
+  .main {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .sub {
+    transition-delay: 0.1s;
+  }
+  .inner-footer{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(14, 14, 14);;
+  
+  }
+  
+  .social-links{
+     display: flex;
+  
+  }
+  .social-links ul{
+     display: flex;
+     width: 300px;
+     height: 60px;
+     margin: auto;
+     
+   
+  
+  }
+  .social-items{
+    list-style: none;
+  
+  }
+  .social-items a{
+    padding: 10px 20px;
+    font-size: 30px;
+    color: aqua;
+  
+  }
+  .outer-footer{
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: gray;
+    width: auto;
+    height: auto;
+  
+  }
+
+  
+
+  @media (max-width: 1104px) {
+    .wrapper .content-area .option p{
+        height: 350px;
+        width: 350px;
+    }
+    .banner-area{
+      max-width: 100%;
+      padding: 5rem 1rem;  
+
+  }  
+
+  .banner-area .h5{
+    max-width: 100%;
+    padding: 5rem 1rem;  
+
+}  
+   .wrapper{
+      max-width: 100%;
+      padding: 5rem 1rem 3rem; 
+      
+
+   }
+
+   .content-area {
+      width: 100%;
+      padding: 0rem 2rem 0rem;
+
+   }
+
+   .p{
+      width: 100%;
+      padding: 6rem 2rem 16rem;
+      left: 0;
+     right: 0;
+
+   }
+   .option{
+    width: 100%;
+      padding: 6rem 2rem 16rem;
+
+   }
+
+   .options{
+    width: 100%;
+    padding: 6rem 2rem 16rem;
+
+   }
+
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+    .banner-area{
+      max-width: 100%;
+      padding: 5rem 1rem;  
+
+  }  
+
+   .wrapper{
+      max-width: 100%;
+      padding: 5rem 1rem; 
+      
+
+   }
+
+   .content-area {
+      width: 100%;
+      padding: 2rem 2rem 1rem;
+   }
+
+   .p{
+      width: 100%;
+      padding: 2rem 2rem 1rem;
+      left: 0;
+     right: 0;
+
+   }
+   .option{
+    width: 100%;
+      padding: 1rem 0rem 0rem;
+
+
+   }
+
+   .options{
+    width: auto;
+    padding: 1rem 0rem 0rem;
+   }
+
+
+}
+     
+    
+@media (max-width: 800px){
+
+  .wrapper .banner-area{
+    font-size: 4rem;
+    max-width: 100%;
+    padding: 5rem 1rem;
+
+}
+
+  .menu-btn{
+      display: block;
+      z-index: 999;
+  }
+  .menu-btn i.active:before{
+      content: "\f00d";
+  }
+  .navbar .menu{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      left: -100%;
+      top: 0;
+      background: #111;
+      text-align: center;
+      padding-top: 80px;
+      transition: all 0.3s ease;
+  }
+  .navbar .menu.active{
+      left: 0;
+  }
+  .navbar .menu li{
+      display: block;
+  }
+  .navbar .menu li a{
+      display: inline-block;
+      margin: 20px 0;
+      font-size: 25px;
+  }
+ 
+  .wrapper{
+    width: 100%;
+    padding: 5rem 2rem;
+ }
+ .content-area{
+   width: 100%;
+   padding: 1rem 6rem 2rem;
+
+ }
+.content-area .p{
+    width: 100%;
+    padding: 5rem 1rem 2rem;
+    left: 0;
+     right: 0;
+}
+
+.banner-area h5{
+  max-width: 100%;
+  padding: 5rem 1rem;  
+ 
+
+  }
+  .option{
+    width: auto;
+    padding: -50rem -10rem;
+
+  }
+  .options{
+    width: auto;
+    padding: -20rem -20rem;
+
+  }
+  .outer-footer{
+   width: 100%;
+    padding: 1rem 10rem;
+}
+.inner-footer{
+
+  width: 100%;
+  padding: 1rem 10rem;
+}
+}
+  @media (max-width: 600px) {
+
+    .menu-btn{
+      display: block;
+      z-index: 999;
+  }
+  .menu-btn i.active:before{
+      content: "\f00d";
+  }
+  .navbar .menu{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      left: -100%;
+      top: 0;
+      background: #111;
+      text-align: center;
+      padding-top: 80px;
+      transition: all 0.3s ease;
+  }
+  .navbar .menu.active{
+      left: 0;
+  }
+  .navbar .menu li{
+      display: block;
+  }
+  .navbar .menu li a{
+      display: inline-block;
+      margin: 20px 0;
+      font-size: 25px;
+  }
+    .wrapper .banner-area{
+      font-size: 4rem;
+      max-width: 100%;
+      padding: 5rem 1rem;
+
+}
+
+    .max-width{
+      width: 100%;
+        padding: 0 23px;
+    }
+   .banner-area{
+    max-width: 100%;
+    padding: 5rem 1rem;  
+   }
+    .wrapper{
+      max-width: 100%;
+      max-width: 1170px;
+      padding: 2rem -20px 11rem;
+      
+   }
+   .content-area{
+     width: 100%;
+     max-width: 100%;
+     padding: 0rem 13rem 30rem;
+   }
+     
+
+   .credit{
+    width: 100%;
+     padding: 0rem 10rem 1rem;
+
+    }
+    .option{
+      width: auto;
+      max-width: 100%;
+      padding: 1rem -20rem -1rem;
+      left: 20px;
+  
+    }
+    .options{
+      width: auto;
+      max-width: 100%;
+      padding: 10rem -20rem -1rem;
+      left: 10px;
+      position: absolute;
+      left: 0;
+     right: 0;
+
+    }
+    .outer-footer{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 5px 0px;
+  }
+  .inner-footer{
+  position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 5px 0px;
+  }
+  
+  }
+
+  
